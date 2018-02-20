@@ -1,0 +1,42 @@
+@font-face {
+  font-family: Calibri;
+  src: local("Calibri"),
+       url(/static/fonts/calibri.ttf);
+  font-weight: bold;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.masthead {
+    width:100%;
+    background: url(/static/img/header-bg.png) no-repeat bottom center scroll;
+     height: 354px;
+}
+
+.main-container {
+    width:1000px;
+    max-width: 1000px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.h2-label {
+    text-align:center;
+    font-family: Calibri;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.top-bar {
+    width:1000px;
+    max-width: 1000px;
+}
+
