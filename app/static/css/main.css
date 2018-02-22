@@ -10,6 +10,7 @@
     top: 0;
     right: 0;
     left: 0;
+    width:1000px;
     z-index: 1030;
 }
 
@@ -39,4 +40,28 @@
     width:1000px;
     max-width: 1000px;
 }
+.list-inline-item a{
+    color: #000;
+}
 
+.top-bar .list-inline {
+    padding-right: 90px;
+}
+
+.navbar-brand {
+    margin-top: 14px;
+    margin-left: 25px;
+}
+
+.navbar-nav {
+    display: flex;
+}
+
+.menuNav {
+    width: 800px;
+}
+
+
+.list-inline-item{
+
+}

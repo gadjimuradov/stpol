@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2 class="h2-label">Добавить</h2>
+    <div class="row">
+          <form enctype="multipart/form-data" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=100) }}
+        </p>
+
+        <p>
+            <input type="submit" value="Добавить">
+        </p>
+
+
+    </form>
+    </div>
+
+{% endblock %}
