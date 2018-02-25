@@ -17,6 +17,12 @@ def works():
     return render_template('works.html', works=works)
 
 
+@app.route('/works/<pk>/')
+def work_page(pk):
+    work = Work.query.get(pk)
+    return render_template('work_page.html', work=work)
+
+
 @app.route('/works/add', methods=['GET','POST'])
 def add_work():
     form = WorkForm(request.form)
@@ -33,3 +39,8 @@ def add_work():
 @app.route('/test')
 def test_page():
     return render_template('test.html')
+
+
+@app.route('/qa')
+def qa_page():
+    return render_template('qa_page.html')

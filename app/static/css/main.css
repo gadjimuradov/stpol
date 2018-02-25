@@ -65,3 +65,14 @@
 .list-inline-item{
 
 }
+
+.footer-nav {
+    margin-left: 110px;
+
+}
+.footer-nav li a{
+    color: #000;
+    text-transform: uppercase;
+    padding-right: 10px;
+
+}

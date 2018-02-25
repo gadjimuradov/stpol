@@ -6,6 +6,7 @@ class Work(db.Model):
     title = db.Column(db.String(255))
     body = db.Column(db.String(255))
     image_url = db.Column(db.String(255))
+    youtube_url = db.Column(db.String(255))
 
     def __repr__(self):
         return '<Work {}>'.format(self.title)
