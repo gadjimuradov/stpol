@@ -5,6 +5,10 @@
   font-weight: bold;
 }
 
+body {
+    font-family: Calibri;
+}
+
 .fixed-top {
     position: fixed;
     top: 0;
@@ -17,7 +21,8 @@
 .masthead {
     width:100%;
     background: url(/static/img/header-bg.png) no-repeat bottom center scroll;
-     height: 354px;
+    height: 354px;
+    margin-bottom: 45px;
 }
 
 .main-container {
@@ -30,6 +35,7 @@
 }
 
 .h2-label {
+    font-family: Calibri;
     text-align:center;
     font-family: Calibri;
     font-size: 24px;
@@ -45,7 +51,6 @@
 }
 
 .top-bar .list-inline {
-    padding-right: 90px;
 }
 
 .navbar-brand {
@@ -75,4 +80,34 @@
     text-transform: uppercase;
     padding-right: 10px;
 
+}
+
+.intro-body-labels {
+    padding-left: 53px;
+}
+
+.intro-body-labels p {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #000;
+    font-weight:400;
+}
+.nav-menu-top a {
+    color: #000;
+    text-transform: uppercase;
+
+}
+
+.advantages h3 {
+    color:#4c0d0c;
+    font-size:18px;
+    text-transform: uppercase;
+}
+
+.advantages p {
+    font-weight: 500;
+}
+.h2-label-advantages {
+    margin-top: 50px;
+    margin-bottom: 48px;
 }
