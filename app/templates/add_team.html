@@ -7,17 +7,13 @@
         <form enctype="multipart/form-data" method="post">
             {{ form.hidden_tag() }}
             <p>
-                {{ form.title.label }}<br>
-                {{ form.title(size=100) }}
+                {{ form.fio.label }}<br>
+                {{ form.fio(size=100) }}
             </p>
             <p>
-                {{ form.image_url.label }}<br>
-                <input type="file" name="image_url">
+                {{ form.avatar.label }}<br>
+                <input type="file" name="avatar">
 
-            </p>
-            <p>
-                {{ form.youtube_url.label }}<br>
-                {{ form.youtube_url(size=100) }}
             </p>
 
             <p>

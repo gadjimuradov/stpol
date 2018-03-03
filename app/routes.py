@@ -1,15 +1,18 @@
 import os
 from flask import render_template, request, redirect, url_for
-from app.models import Work
-from app.forms import WorkForm
+from werkzeug.utils import secure_filename
+from app.models import Work, Team
+from app.forms import WorkForm, TeamForm
 from app import app, db
 
+UPLOAD_FOLDER = '/static/img/content'
 
 @app.route('/')
 @app.route('/index')
 def index():
     last_works = Work.query.all()
-    return render_template('main.html', works=last_works)
+    team = Team.query.all()
+    return render_template('main.html', works=last_works, team=team)
 
 
 @app.route('/works', methods=['GET'])
@@ -33,7 +36,10 @@ def add_work():
         work = Work()
         work.title = form.title.data
         work.youtube_url = form.youtube_url.data
-        work.image_url = form.image_url.data
+        file = request.files['image_url']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        work.image_url = filename
         work.body = form.body.data
         db.session.add(work)
         db.session.commit()
@@ -51,9 +57,16 @@ def delete_work(pk):
     return redirect('/works')
 
 
-@app.route('/test')
-def test_page():
-    return render_template('test.html')
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/technology')
+def technology():
+    return render_template('technology.html')
+
+
 
 
 @app.route('/qa')
@@ -76,3 +89,30 @@ def upload_insta_photo():
 @app.route('/insta/images')
 def show_images_insta():
     return 'Images from insta'
+
+
+@app.route('/team/add', methods=['GET','POST'])
+def add_team():
+    form = TeamForm(request.form)
+
+    if form.validate_on_submit():
+        team = Team()
+        team.fio = form.fio.data
+        file = request.files['avatar']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        team.avatar = filename
+        db.session.add(team)
+        db.session.commit()
+        return redirect('/')
+    return render_template('add_team.html', form=form)
+
+
+@app.route('/team/delete/<pk>/')
+def delete_team(pk):
+    team = Team.query.filter_by(id=pk).first()
+    if team:
+        db.session.delete(team)
+        db.session.commit()
+
+    return redirect('/')
