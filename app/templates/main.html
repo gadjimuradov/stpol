@@ -25,14 +25,14 @@
     <div class="row">
         {% for work in works %}
         <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
+            <div class="card mb-4 box-shadow" data-id="{{ work.id }}">
                 {% if work.youtube_url %}
                     <iframe  width="300" height="225" frameborder="0" src="{{ work.youtube_url }}" allowfullscreen></iframe>
                 {% else %}
                 <img class="card-img-top"
-                     alt="Thumbnail [100%x225]"
+                     alt="{{ work.id }}"
                      style="height: 225px; width: 100%; display: block;"
-                     src="/static/img/content/work1.jpg"
+                     src="{{ work.image_url }}"
                      data-holder-rendered="true">
                 {% endif %}
             </div>

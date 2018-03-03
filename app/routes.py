@@ -41,6 +41,16 @@ def add_work():
     return render_template('add_work.html', form=form)
 
 
+@app.route('/works/delete/<pk>/')
+def delete_work(pk):
+    work = Work.query.filter_by(id=pk).first()
+    if work:
+        db.session.delete(work)
+        db.session.commit()
+
+    return redirect('/works')
+
+
 @app.route('/test')
 def test_page():
     return render_template('test.html')

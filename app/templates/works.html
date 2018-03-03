@@ -8,12 +8,11 @@
         <div class="col-md-4">
             <div class="card mb-4 box-shadow">
                 <img class="card-img-top"
-                     alt="Thumbnail [100%x225]"
+                     alt="{{ work.title }}"
                      style="height: 225px; width: 100%; display: block;"
-                     src="/static/img/content/work1.jpg"
+                     src="{{ work.image_url }}"
                      data-holder-rendered="true">
             </div>
-            <h2><a href="/works/{{ work.id }}">{{ work.title }}</a></h2>
         </div>
         {% endfor %}
 
