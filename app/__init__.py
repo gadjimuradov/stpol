@@ -8,6 +8,7 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 app.config.from_object(Config)
+app.debug = True
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
